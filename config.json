@@ -1,0 +1,47 @@
+{
+  "pro": true,
+  "plugins": [
+    "jsdom-quokka-plugin",
+    "quokka-signet-explorer",
+    "dotenv-quokka-plugin"
+  ],
+  "babel": {
+    "path": "/home/omersonc/.quokka/node_modules/@babel/core/",
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react",
+      "@babel/preset-flow"
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-transform-modules-commonjs",
+      "@babel/plugin-proposal-class-properties"
+    ],
+    "env": {
+      "development": {
+        "plugins": ["transform-es2015-modules-commonjs"]
+      },
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs",
+          "@babel/plugin-proposal-class-properties"
+        ],
+        "presets": ["@babel/preset-react"]
+      }
+    }
+  },
+  "jsdom": {
+    "userAgent": "quokka.js",
+    "html": "<div id=\"testDiv\">Hello</div>",
+    "config": {
+      "pretendToBeVisual": true,
+      "runScripts": "dangerously",
+      "url": "http://localhost/"
+    }
+  },
+  "autolog-comment": "enable/disable kung ayaw mo mag autolog",
+  "autoLog": false,
+  "dotenv": {
+    "path": "./.env.local"
+  }
+}
